@@ -9,15 +9,22 @@
   <!-- Google Fonts & Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
+  <!-- DEPTH INDICATOR (mengikuti posisi scroll, menegaskan tema kedalaman laut) -->
+  <div class="depth-indicator" aria-hidden="true">
+    <i class="fa-solid fa-water"></i>
+    <span id="depthValue">0</span>m — <span id="depthLabel">Permukaan</span>
+  </div>
+
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="navbar-brand" data-aos="fade-down" data-aos-duration="1000">
+      <i class="fa-solid fa-water"></i>
       <h1>Website Raffi</h1>
     </div>
     <div class="menu" data-aos="fade-down" data-aos-duration="1000">
@@ -33,65 +40,111 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION (Teks Kiri, Foto Kanan) -->
-  <section class="hero-container">
-    <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
-      <span class="badge">Siswa SMK IDN Boarding School</span>
-      <h1 class="hero-title">RAFFI RIZQ YUNIKO</h1>
-      <h2 class="hero-subtitle">X RPL A — Web Developer</h2>
-      <p class="hero-desc">
-        Saya adalah seorang programmer yang sedang menempuh pendidikan di SMK IDN Boarding School Jonggol. Asal dari Bandung Lembang dan berfokus pada pengembangan web modern.
-      </p>
-      <div class="hero-action">
-        <a class="btn-primary" href="https://www.instagram.com/rffiynk/" target="_blank">
-          <i class="fa-brands fa-instagram"></i> Instagram Saya
-        </a>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-bubbles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="hero-container">
+      <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+        <span class="badge">Siswa SMK IDN Boarding School</span>
+        <h1 class="hero-title">RAFFI RIZQ<br>YUNIKO</h1>
+        <h2 class="hero-subtitle"><i class="fa-solid fa-code"></i> X RPL A — Web Developer</h2>
+        <p class="hero-desc">
+          Saya adalah seorang programmer yang sedang menempuh pendidikan di SMK IDN Boarding School Jonggol. Asal dari Bandung Lembang dan berfokus pada pengembangan web modern.
+        </p>
+        <div class="hero-action">
+          <a class="btn-primary" href="https://www.instagram.com/rffiynk/" target="_blank">
+            <i class="fa-brands fa-instagram"></i> Instagram Saya
+          </a>
+        </div>
+      </div>
+      <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+        <div class="hero-image-inner">
+          <div class="hero-image-ring"></div>
+          <img src="halo.jpeg" alt="Raffi Rizq Yuniko">
+        </div>
       </div>
     </div>
-    <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
-      <img src="halo.jpeg" alt="Raffi Rizq Yuniko">
-    </div>
+
+    <svg class="wave-divider wave-divider-back" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,80 C300,20 600,110 900,50 C1150,0 1300,80 1440,40 L1440,120 L0,120 Z"></path>
+    </svg>
+    <svg class="wave-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,64 C240,120 480,0 720,32 C960,64 1200,120 1440,48 L1440,120 L0,120 Z"></path>
+    </svg>
   </section>
 
   <!-- ABOUT ME SECTION -->
   <section id="about-me" class="about-me" data-aos="fade-up" data-aos-duration="1000">
-    <div class="about-text" data-aos="fade-right" data-aos-duration="1000">
+    <div class="about-image" data-aos="fade-right" data-aos-duration="1000">
+      <div class="about-image-blob"></div>
+      <img src="https://i.pravatar.cc/200" alt="Foto Profil">
+    </div>
+    <div class="about-text" data-aos="fade-left" data-aos-duration="1000">
+      <span class="eyebrow"><i class="fa-solid fa-anchor"></i> Tentang Saya</span>
       <h2>About Me</h2>
       <p>
         Halo, kenalin saya Raffi Rizq Yuniko. Saya merupakan siswa SMK IDN Boarding School Jonggol dan seorang web developer pemula yang sedang mempelajari HTML, CSS, serta JavaScript. Saya memiliki minat besar di bidang IT, oleh karena itu saya mengambil jurusan RPL. Saat ini saya berada di kelas 10 RPL A.
       </p>
     </div>
-    <div class="about-image" data-aos="fade-left" data-aos-duration="1000">
-      <img src="https://i.pravatar.cc/200" alt="Foto Profil">
-    </div>
   </section>
 
   <!-- SKILLS SECTION -->
   <section id="skills" class="skills">
+    <span class="eyebrow center"><i class="fa-solid fa-gauge-high"></i> Kedalaman Keahlian</span>
     <h2 class="section-title" data-aos="fade-up">My Skills</h2>
     <div class="skill-container">
       <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
         <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
         <h3>HTML</h3>
         <p class="stars">⭐⭐⭐⭐⭐</p>
-        <div class="progres">
-          <div class="bar html"></div>
+        <div class="depth-scale">
+          <div class="depth-track" style="--depth:95%">
+            <div class="depth-gauge">
+              <div class="depth-fill"></div>
+            </div>
+            <span class="depth-marker"><i class="fa-solid fa-person-swimming"></i></span>
+          </div>
+          <div class="depth-scale-labels">
+            <span>0m</span>
+            <span>100m</span>
+          </div>
         </div>
       </div>
       <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
         <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
         <h3>CSS</h3>
         <p class="stars">⭐⭐⭐⭐⭐</p>
-        <div class="progres">
-          <div class="bar css"></div>
+        <div class="depth-scale">
+          <div class="depth-track" style="--depth:88%">
+            <div class="depth-gauge">
+              <div class="depth-fill"></div>
+            </div>
+            <span class="depth-marker"><i class="fa-solid fa-person-swimming"></i></span>
+          </div>
+          <div class="depth-scale-labels">
+            <span>0m</span>
+            <span>100m</span>
+          </div>
         </div>
       </div>
       <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
         <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
         <h3>JAVASCRIPT</h3>
         <p class="stars">⭐⭐⭐⭐⭐</p>
-        <div class="progres">
-          <div class="bar js"></div>
+        <div class="depth-scale">
+          <div class="depth-track" style="--depth:75%">
+            <div class="depth-gauge">
+              <div class="depth-fill"></div>
+            </div>
+            <span class="depth-marker"><i class="fa-solid fa-person-swimming"></i></span>
+          </div>
+          <div class="depth-scale-labels">
+            <span>0m</span>
+            <span>100m</span>
+          </div>
         </div>
       </div>
     </div>
@@ -100,6 +153,7 @@
   <!-- CONTACT SECTION -->
   <section id="contact" class="contact">
     <div class="contact-form" data-aos="fade-up" data-aos-duration="1000">
+      <span class="eyebrow"><i class="fa-solid fa-envelope-open-text"></i> Ada Pertanyaan?</span>
       <h2>Kirim Pesan</h2>
       <form action="https://formsubmit.co/raffirizqyuniko@gmail.com" method="post">
         <div class="input-group">
@@ -126,7 +180,7 @@
           <label>PESAN</label>
           <textarea name="pesan" placeholder="Tulis pesan..." rows="4"></textarea>
         </div>
-        <button type="submit" class="btn-submit">Kirim Pesan</button>
+        <button type="submit" class="btn-submit"><i class="fa-solid fa-paper-plane"></i> Kirim Pesan</button>
       </form>
     </div>
     <div class="contact-maps" data-aos="fade-up" data-aos-duration="1000">
@@ -138,24 +192,51 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-socials">
-      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/rffiynk/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#"><i class="fa-brands fa-youtube"></i></a>
-      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+    <svg class="wave-divider footer-wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,48 C240,0 480,96 720,64 C960,32 1200,96 1440,48 L1440,0 L0,0 Z"></path>
+    </svg>
+    <div class="footer-inner">
+      <div class="footer-socials">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/rffiynk/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#contact">Contact us</a></li>
+        <li><a href="#">Our Services</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+      <p class="copyright">Copyright © 2026 Raffi Rizq Yuniko. All rights reserved.</p>
     </div>
-    <ul class="footer-links">
-      <li><a href="#contact">Contact us</a></li>
-      <li><a href="#">Our Services</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Terms & Conditions</a></li>
-    </ul>
-    <p class="copyright">Copyright © 2026 Raffi Rizq Yuniko. All rights reserved.</p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ once: true });
+
+    // Update indikator kedalaman sesuai posisi scroll (0m di atas, 500m di dasar)
+    const depthValue = document.getElementById('depthValue');
+    const depthLabel = document.getElementById('depthLabel');
+    const maxDepth = 500;
+
+    function updateDepth() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const ratio = docHeight > 0 ? scrollTop / docHeight : 0;
+      const depth = Math.round(ratio * maxDepth);
+      depthValue.textContent = depth;
+
+      let label = 'Permukaan';
+      if (depth > 350) label = 'Palung Laut';
+      else if (depth > 200) label = 'Laut Dalam';
+      else if (depth > 60) label = 'Zona Terumbu';
+      depthLabel.textContent = label;
+    }
+
+    window.addEventListener('scroll', updateDepth, { passive: true });
+    updateDepth();
   </script>
 </body>
 
