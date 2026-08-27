@@ -4,27 +4,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio | Raffi Rizq Yuniko</title>
+  <title>Portofolio | Raffi Rizq Yuniko — Atlantis</title>
   <link rel="stylesheet" href="index.css">
   <!-- Google Fonts & Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Jost:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-  <!-- DEPTH INDICATOR (mengikuti posisi scroll, menegaskan tema kedalaman laut) -->
+  <!-- shared gradient for the skill rings -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#22C4B4"/>
+        <stop offset="100%" stop-color="#EBC988"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- SONAR / DEPTH READOUT (mengikuti posisi scroll, menegaskan tema pencarian Atlantis) -->
   <div class="depth-indicator" aria-hidden="true">
-    <i class="fa-solid fa-water"></i>
-    <span id="depthValue">0</span>m — <span id="depthLabel">Permukaan</span>
+    <span class="sonar-icon"><i class="fa-solid fa-location-crosshairs"></i></span>
+    <span class="depth-readout"><span id="depthValue">0</span>M</span>
+    <span class="depth-sep">·</span>
+    <span id="depthLabel">Permukaan</span>
   </div>
 
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="navbar-brand" data-aos="fade-down" data-aos-duration="1000">
-      <i class="fa-solid fa-water"></i>
+      <i class="fa-solid fa-dungeon"></i>
       <h1>Website Raffi</h1>
     </div>
     <div class="menu" data-aos="fade-down" data-aos-duration="1000">
@@ -63,10 +75,39 @@
       <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
         <div class="hero-image-inner">
           <div class="hero-image-ring"></div>
+          <svg class="hero-image-runes" viewBox="0 0 300 300" aria-hidden="true">
+            <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(201,161,90,0.35)" stroke-width="1"/>
+            <g stroke="rgba(235,201,136,0.75)" stroke-width="2">
+              <line x1="150" y1="8"   x2="150" y2="26"/>
+              <line x1="150" y1="274" x2="150" y2="292"/>
+              <line x1="8"   y1="150" x2="26"  y2="150"/>
+              <line x1="274" y1="150" x2="292" y2="150"/>
+              <line x1="45"  y1="45"  x2="57"  y2="57"/>
+              <line x1="243" y1="243" x2="255" y2="255"/>
+              <line x1="45"  y1="255" x2="57"  y2="243"/>
+              <line x1="243" y1="57"  x2="255" y2="45"/>
+            </g>
+          </svg>
           <img src="halo.jpeg" alt="Raffi Rizq Yuniko">
         </div>
       </div>
     </div>
+
+    <svg class="ruins-silhouette" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+      <g fill="rgba(4,20,31,0.55)">
+        <rect x="80" y="110" width="46" height="110"/>
+        <rect x="70" y="98"  width="66" height="18"/>
+        <polygon points="230,150 278,124 278,220 230,220"/>
+        <rect x="420" y="80" width="50" height="140"/>
+        <rect x="408" y="66" width="74" height="20"/>
+        <rect x="620" y="128" width="40" height="92"/>
+        <polygon points="855,92 900,68 908,220 852,220"/>
+        <rect x="1040" y="58" width="56" height="162"/>
+        <rect x="1026" y="42" width="84" height="20"/>
+        <rect x="1230" y="118" width="42" height="102"/>
+        <rect x="1218" y="106" width="62" height="16"/>
+      </g>
+    </svg>
 
     <svg class="wave-divider wave-divider-back" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
       <path d="M0,80 C300,20 600,110 900,50 C1150,0 1300,80 1440,40 L1440,120 L0,120 Z"></path>
@@ -84,6 +125,7 @@
     </div>
     <div class="about-text" data-aos="fade-left" data-aos-duration="1000">
       <span class="eyebrow"><i class="fa-solid fa-anchor"></i> Tentang Saya</span>
+      <div class="meander left"></div>
       <h2>About Me</h2>
       <p>
         Halo, kenalin saya Raffi Rizq Yuniko. Saya merupakan siswa SMK IDN Boarding School Jonggol dan seorang web developer pemula yang sedang mempelajari HTML, CSS, serta JavaScript. Saya memiliki minat besar di bidang IT, oleh karena itu saya mengambil jurusan RPL. Saat ini saya berada di kelas 10 RPL A.
@@ -93,59 +135,102 @@
 
   <!-- SKILLS SECTION -->
   <section id="skills" class="skills">
-    <span class="eyebrow center"><i class="fa-solid fa-gauge-high"></i> Kedalaman Keahlian</span>
+    <span class="eyebrow center"><i class="fa-solid fa-gauge-high"></i> Level Keahlian</span>
+    <div class="meander center"></div>
     <h2 class="section-title" data-aos="fade-up">My Skills</h2>
     <div class="skill-container">
       <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
         <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
         <h3>HTML</h3>
-        <p class="stars">⭐⭐⭐⭐⭐</p>
-        <div class="depth-scale">
-          <div class="depth-track" style="--depth:95%">
-            <div class="depth-gauge">
-              <div class="depth-fill"></div>
+        <p class="stars">⭐⭐⭐⭐</p>
+        <div class="skill-ring">
+          <svg viewBox="0 0 120 120" class="ring-svg" aria-hidden="true">
+            <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+            <circle class="ring-fill" cx="60" cy="60" r="52" style="--pct:70"></circle>
+            <g class="ring-ticks">
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(0 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(45 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(90 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(135 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(180 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(225 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(270 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(315 60 60)"/>
+            </g>
+          </svg>
+          <div class="ring-center">
+            <div class="radar-grid"></div>
+            <div class="radar-sweep"></div>
+            <span class="radar-blip" style="top:30%; left:66%;"></span>
+            <div class="radar-readout">
+              <i class="fa-solid fa-location-crosshairs"></i>
+              <span class="ring-percent">70<small>%</small></span>
             </div>
-            <span class="depth-marker"><i class="fa-solid fa-person-swimming"></i></span>
-          </div>
-          <div class="depth-scale-labels">
-            <span>0m</span>
-            <span>100m</span>
           </div>
         </div>
+        <p class="ring-caption">Tingkat Penguasaan</p>
       </div>
       <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
         <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
         <h3>CSS</h3>
-        <p class="stars">⭐⭐⭐⭐⭐</p>
-        <div class="depth-scale">
-          <div class="depth-track" style="--depth:88%">
-            <div class="depth-gauge">
-              <div class="depth-fill"></div>
+        <p class="stars">⭐⭐⭐</p>
+        <div class="skill-ring">
+          <svg viewBox="0 0 120 120" class="ring-svg" aria-hidden="true">
+            <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+            <circle class="ring-fill" cx="60" cy="60" r="52" style="--pct:60"></circle>
+            <g class="ring-ticks">
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(0 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(45 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(90 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(135 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(180 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(225 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(270 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(315 60 60)"/>
+            </g>
+          </svg>
+          <div class="ring-center">
+            <div class="radar-grid"></div>
+            <div class="radar-sweep"></div>
+            <span class="radar-blip" style="top:58%; left:32%;"></span>
+            <div class="radar-readout">
+              <i class="fa-solid fa-location-crosshairs"></i>
+              <span class="ring-percent">62<small>%</small></span>
             </div>
-            <span class="depth-marker"><i class="fa-solid fa-person-swimming"></i></span>
-          </div>
-          <div class="depth-scale-labels">
-            <span>0m</span>
-            <span>100m</span>
           </div>
         </div>
+        <p class="ring-caption">Tingkat Penguasaan</p>
       </div>
       <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
         <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
         <h3>JAVASCRIPT</h3>
-        <p class="stars">⭐⭐⭐⭐⭐</p>
-        <div class="depth-scale">
-          <div class="depth-track" style="--depth:75%">
-            <div class="depth-gauge">
-              <div class="depth-fill"></div>
+        <p class="stars">⭐⭐⭐</p>
+        <div class="skill-ring">
+          <svg viewBox="0 0 120 120" class="ring-svg" aria-hidden="true">
+            <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+            <circle class="ring-fill" cx="60" cy="60" r="52" style="--pct:45"></circle>
+            <g class="ring-ticks">
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(0 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(45 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(90 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(135 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(180 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(225 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(270 60 60)"/>
+              <line x1="60" y1="4"  x2="60" y2="12" transform="rotate(315 60 60)"/>
+            </g>
+          </svg>
+          <div class="ring-center">
+            <div class="radar-grid"></div>
+            <div class="radar-sweep"></div>
+            <span class="radar-blip" style="top:38%; left:44%;"></span>
+            <div class="radar-readout">
+              <i class="fa-solid fa-location-crosshairs"></i>
+              <span class="ring-percent">45<small>%</small></span>
             </div>
-            <span class="depth-marker"><i class="fa-solid fa-person-swimming"></i></span>
-          </div>
-          <div class="depth-scale-labels">
-            <span>0m</span>
-            <span>100m</span>
           </div>
         </div>
+        <p class="ring-caption">Tingkat Penguasaan</p>
       </div>
     </div>
   </section>
@@ -196,6 +281,7 @@
       <path d="M0,48 C240,0 480,96 720,64 C960,32 1200,96 1440,48 L1440,0 L0,0 Z"></path>
     </svg>
     <div class="footer-inner">
+      <div class="meander footer"></div>
       <div class="footer-socials">
         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/rffiynk/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
